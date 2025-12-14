@@ -1,11 +1,4 @@
-# Milestone-1: Chatbot NLU Trainer & Evaluator (Scaffold)
-
-This is a minimal project scaffold for Milestone-1 containing:
-- User registration & login (JWT stored in session)
-- Project workspace creation
-- Dataset upload (CSV / JSON)
-- Parsing uploaded dataset to extract intents, examples, and entities
-- Display parsed intents and example sentences
+Chatbot NLU Trainer & Evaluator
 
 ## How to run (local)
 1. Create a virtual environment:
@@ -28,7 +21,4 @@ This is a minimal project scaffold for Milestone-1 containing:
    ```
 5. Open http://127.0.0.1:5000 in your browser.
 
-## Notes
-- This is a scaffold for Milestone-1. It focuses on functionality, not production security.
-- JWT tokens are used for API endpoints; session holds a basic login state for the UI.
-- Uploaded datasets are saved under `uploads/` and parsed to show intents and example sentences.
+
