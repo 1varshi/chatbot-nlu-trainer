@@ -1,0 +1,19 @@
+<h2>Model Evaluation</h2>
+
+<form action="/run_evaluation" method="post">
+    <button type="submit">Run Evaluation</button>
+</form>
+
+
+<div id="results" style="margin-top:20px;">
+    {% if metrics %}
+    <h3>Intent Metrics</h3>
+    <pre>{{ metrics }}</pre>
+
+    <h3>Confusion Matrix</h3>
+    <img src="{{ confusion_url }}" width="500">
+
+    <h3>Entity Comparison</h3>
+    <img src="{{ entity_url }}" width="500">
+    {% endif %}
+</div>

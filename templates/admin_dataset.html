@@ -1,0 +1,20 @@
+<h2>Dataset Management</h2>
+
+<p>Total Samples: {{ data|length }}</p>
+
+<table border="1">
+<tr>
+    <th>Sentence</th>
+    <th>Intent</th>
+</tr>
+
+{% for item in data %}
+<tr>
+    <td>{{ item.sentence }}</td>
+    <td>{{ item.intent }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<br>
+<a href="/admin_dashboard">Back</a>

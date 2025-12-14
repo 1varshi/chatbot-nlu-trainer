@@ -1,0 +1,21 @@
+<h2>Model Management</h2>
+
+<table border="1">
+<tr>
+    <th>Model File</th>
+    <th>Action</th>
+</tr>
+
+{% for m in models %}
+<tr>
+    <td>{{ m }}</td>
+    <td>
+        <a href="/download_model/{{ m }}"><button>Download</button></a>
+        <a href="/delete_model/{{ m }}"><button>Delete</button></a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+
+<br>
+<a href="/admin_dashboard">Back</a>

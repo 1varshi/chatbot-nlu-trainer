@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Dataset</title><link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"></head>
+<body>
+<div class="container">
+  <h2>Dataset: {{ dataset.filename }}</h2>
+  <p>
+  <a href="{{ url_for('download_dataset', dataset_id=dataset.id) }}">
+      <button>Download Dataset</button>
+  </a>
+</p>
+
+  <table border="1" cellpadding="6" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Text</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in parsed %}
+            <tr>
+                <td>{{ row.text }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+  <p><a href="{{ url_for('project_view', project_id=dataset.project_id) }}">Back to Project</a></p>
+</div>
+</body>
+</html>

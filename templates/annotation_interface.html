@@ -1,0 +1,104 @@
+<h1>Annotation Interface</h1>
+
+<textarea id="inputText" rows="4" cols="60" placeholder="Enter sentence here..."></textarea>
+<br><br>
+
+<button onclick="analyze()">Analyze</button>
+
+<div id="result"></div>
+
+<h3>Edit Intent</h3>
+<input type="text" id="intentBox" placeholder="Enter intent manually">
+
+
+<h3>Edit or Add Entities</h3>
+<div id="entityEdit"></div>
+
+<br>
+<button onclick="saveData()">Save</button>
+
+<script>
+function analyze() {
+    const text = document.getElementById("inputText").value;
+
+    fetch("/analyze_text", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({text: text})
+    })
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("result").innerHTML =
+            "<p><strong>Predicted Intent:</strong> " + data.intent + "</p>" +
+            "<p><strong>Entities:</strong> " + JSON.stringify(data.entities) + "</p>";
+        document.getElementById("intentBox").value = data.intent;
+        let html = "";
+        data.entities.forEach((e, i) => {
+            html += `
+                <div>
+                    Text: <input value="${e.text}" id="entText${i}">
+                    Label: <input value="${e.label}" id="entLabel${i}">
+                    <button onclick="deleteEntity(${i})">Delete</button>
+                </div>
+            `;
+        });
+
+        html += `<button onclick="addEntity()">Add Entity</button>`;
+        document.getElementById("entityEdit").innerHTML = html;
+    });
+}
+
+let newEntities = [];
+
+function addEntity() {
+    newEntities.push({text: "", label: ""});
+    let i = newEntities.length - 1;
+
+    let div = document.createElement("div");
+    div.innerHTML = `
+        <div>
+            Text: <input id="newEntText${i}">
+            Label: <input id="newEntLabel${i}">
+        </div>`;
+    document.getElementById("entityEdit").appendChild(div);
+}
+
+function deleteEntity(i) {
+    document.getElementById(`entText${i}`).value = "";
+    document.getElementById(`entLabel${i}`).value = "";
+}
+
+function saveData() {
+    const text = document.getElementById("inputText").value;
+
+    let entities = [];
+    document.querySelectorAll("[id^='entText']").forEach((input, i) => {
+        const txt = document.getElementById(`entText${i}`).value;
+        const lbl = document.getElementById(`entLabel${i}`).value;
+        if (txt !== "" && lbl !== "") {
+            entities.push({text: txt, label: lbl});
+        }
+    });
+
+    newEntities.forEach((e, i) => {
+        let t = document.getElementById(`newEntText${i}`).value;
+        let l = document.getElementById(`newEntLabel${i}`).value;
+        if (t !== "" && l !== "") {
+            entities.push({text: t, label: l});
+        }
+    });
+
+    fetch("/save_annotated_data", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+        sentence: text,
+        intent: document.getElementById("intentBox").value,
+        entities: entities
+        })
+
+    });
+
+    alert("Saved!");
+}
+</script>

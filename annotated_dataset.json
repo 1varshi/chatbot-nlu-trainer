@@ -1,0 +1,412 @@
+[
+    {
+        "sentence": "Find me cheap flights to Goa this weekend.",
+        "intent": "search_flight",
+        "entities": [
+            {
+                "text": "this weekend",
+                "label": "DATE"
+            }
+        ]
+    },
+    {
+    "sentence": "Book a flight to Delhi tomorrow morning.",
+    "intent": "book_flight",
+    "entities": [
+      { "text": "Delhi", "label": "LOCATION" },
+      { "text": "tomorrow morning", "label": "DATE" }
+    ]
+  },
+  {
+    "sentence": "I need a flight from Mumbai to Bangalore on Friday.",
+    "intent": "book_flight",
+    "entities": [
+      { "text": "Mumbai", "label": "LOCATION" },
+      { "text": "Bangalore", "label": "LOCATION" },
+      { "text": "Friday", "label": "DATE" }
+    ]
+  },
+  {
+    "sentence": "Cancel my flight to Hyderabad.",
+    "intent": "cancel_flight",
+    "entities": [
+      { "text": "Hyderabad", "label": "LOCATION" }
+    ]
+  },
+  {
+    "sentence": "Reschedule my Chennai to Kolkata flight to next Monday.",
+    "intent": "reschedule_flight",
+    "entities": [
+      { "text": "Chennai", "label": "LOCATION" },
+      { "text": "Kolkata", "label": "LOCATION" },
+      { "text": "next Monday", "label": "DATE" }
+    ]
+  },
+  {
+    "sentence": "Book a round trip to Jaipur next month.",
+    "intent": "book_flight",
+    "entities": [
+      { "text": "Jaipur", "label": "LOCATION" },
+      { "text": "next month", "label": "DATE" }
+    ]
+  },
+  {
+    "sentence": "Show me flights from Delhi to Dubai.",
+    "intent": "search_flight",
+    "entities": [
+      { "text": "Delhi", "label": "LOCATION" },
+      { "text": "Dubai", "label": "LOCATION" }
+    ]
+  },
+  {
+    "sentence": "I want a business class flight to Mumbai.",
+    "intent": "book_flight",
+    "entities": [
+      { "text": "business class", "label": "CLASS" },
+      { "text": "Mumbai", "label": "LOCATION" }
+    ]
+  },
+  {
+    "sentence": "Book two tickets to Bangalore for Tuesday.",
+    "intent": "book_flight",
+    "entities": [
+      { "text": "two", "label": "NUMBER" },
+      { "text": "Bangalore", "label": "LOCATION" },
+      { "text": "Tuesday", "label": "DATE" }
+    ]
+  },
+  {
+    "sentence": "Are there any flights to Kochi today?",
+    "intent": "search_flight",
+    "entities": [
+      { "text": "Kochi", "label": "LOCATION" },
+      { "text": "today", "label": "DATE" }
+    ]
+  },
+
+  {
+    "sentence": "Book a train ticket to Hyderabad tomorrow morning.",
+    "intent": "book_train",
+    "entities": [
+      { "text": "Hyderabad", "label": "LOCATION" },
+      { "text": "tomorrow morning", "label": "DATE" }
+    ]
+  },
+  {
+    "sentence": "Find trains from Mumbai to Pune today.",
+    "intent": "search_train",
+    "entities": [
+      { "text": "Mumbai", "label": "LOCATION" },
+      { "text": "Pune", "label": "LOCATION" },
+      { "text": "today", "label": "DATE" }
+    ]
+  },
+  {
+    "sentence": "Book a sleeper class train to Chennai.",
+    "intent": "book_train",
+    "entities": [
+      { "text": "sleeper class", "label": "CLASS" },
+      { "text": "Chennai", "label": "LOCATION" }
+    ]
+  },
+  {
+    "sentence": "Cancel my train ticket to Jaipur.",
+    "intent": "cancel_train",
+    "entities": [
+      { "text": "Jaipur", "label": "LOCATION" }
+    ]
+  },
+  {
+    "sentence": "I need two AC tickets to Delhi.",
+    "intent": "book_train",
+    "entities": [
+      { "text": "two", "label": "NUMBER" },
+      { "text": "AC", "label": "CLASS" },
+      { "text": "Delhi", "label": "LOCATION" }
+    ]
+  },
+  {
+    "sentence": "Show me night trains to Kolkata.",
+    "intent": "search_train",
+    "entities": [
+      { "text": "night", "label": "TIME" },
+      { "text": "Kolkata", "label": "LOCATION" }
+    ]
+  },
+  {
+    "sentence": "Book a train from Chennai to Bangalore.",
+    "intent": "book_train",
+    "entities": [
+      { "text": "Chennai", "label": "LOCATION" },
+      { "text": "Bangalore", "label": "LOCATION" }
+    ]
+  },
+  {
+    "sentence": "Are there any fast trains to Hyderabad?",
+    "intent": "search_train",
+    "entities": [
+      { "text": "Hyderabad", "label": "LOCATION" }
+    ]
+  },
+  {
+    "sentence": "Book a train ticket for Monday evening.",
+    "intent": "book_train",
+    "entities": [
+      { "text": "Monday evening", "label": "DATE" }
+    ]
+  },
+
+  {
+    "sentence": "Book a bus ticket to Bangalore tonight.",
+    "intent": "book_bus",
+    "entities": [
+      { "text": "Bangalore", "label": "LOCATION" },
+      { "text": "tonight", "label": "DATE" }
+    ]
+  },
+  {
+    "sentence": "Find buses from Chennai to Pondicherry.",
+    "intent": "search_bus",
+    "entities": [
+      { "text": "Chennai", "label": "LOCATION" },
+      { "text": "Pondicherry", "label": "LOCATION" }
+    ]
+  },
+  {
+    "sentence": "I need a sleeper bus to Hyderabad.",
+    "intent": "book_bus",
+    "entities": [
+      { "text": "sleeper", "label": "CLASS" },
+      { "text": "Hyderabad", "label": "LOCATION" }
+    ]
+  },
+
+  {
+    "sentence": "Book a cab to Bangalore airport at 6 PM.",
+    "intent": "book_cab",
+    "entities": [
+      { "text": "Bangalore airport", "label": "LOCATION" },
+      { "text": "6 PM", "label": "TIME" }
+    ]
+  },
+  {
+    "sentence": "Get me a taxi to Hyderabad station.",
+    "intent": "book_cab",
+    "entities": [
+      { "text": "Hyderabad station", "label": "LOCATION" }
+    ]
+  },
+  {
+    "sentence": "I want an SUV for my trip to Ooty.",
+    "intent": "book_cab",
+    "entities": [
+      { "text": "SUV", "label": "VEHICLE" },
+      { "text": "Ooty", "label": "LOCATION" }
+    ]
+  },
+
+  {
+    "sentence": "Book a hotel room in Mumbai for two nights.",
+    "intent": "book_hotel",
+    "entities": [
+      { "text": "Mumbai", "label": "LOCATION" },
+      { "text": "two nights", "label": "DATE" }
+    ]
+  },
+  {
+  "sentence": "Find me a cheap hotel near Chennai airport.",
+  "intent": "search_hotel",
+  "entities": [
+    { "text": "Chennai airport", "label": "LOCATION" }
+  ]
+},
+{
+  "sentence": "Book a deluxe room in Hyderabad for this weekend.",
+  "intent": "book_hotel",
+  "entities": [
+    { "text": "Hyderabad", "label": "LOCATION" },
+    { "text": "this weekend", "label": "DATE" }
+  ]
+},
+{
+  "sentence": "I need two rooms in Bangalore for Friday night.",
+  "intent": "book_hotel",
+  "entities": [
+    { "text": "two rooms", "label": "NUMBER" },
+    { "text": "Bangalore", "label": "LOCATION" },
+    { "text": "Friday night", "label": "DATE" }
+  ]
+},
+{
+  "sentence": "Find 5 star hotels in Jaipur.",
+  "intent": "search_hotel",
+  "entities": [
+    { "text": "Jaipur", "label": "LOCATION" },
+    { "text": "5 star", "label": "CLASS" }
+  ]
+},
+{
+  "sentence": "Book a resort in Goa for next month.",
+  "intent": "book_hotel",
+  "entities": [
+    { "text": "Goa", "label": "LOCATION" },
+    { "text": "next month", "label": "DATE" }
+  ]
+},
+{
+  "sentence": "I want a family room in Kochi for three days.",
+  "intent": "book_hotel",
+  "entities": [
+    { "text": "family room", "label": "ROOM_TYPE" },
+    { "text": "Kochi", "label": "LOCATION" },
+    { "text": "three days", "label": "DATE" }
+  ]
+},
+{
+  "sentence": "Show me hotels with free breakfast in Delhi.",
+  "intent": "search_hotel",
+  "entities": [
+    { "text": "free breakfast", "label": "FACILITY" },
+    { "text": "Delhi", "label": "LOCATION" }
+  ]
+},
+{
+  "sentence": "Book a hotel near Mumbai railway station.",
+  "intent": "book_hotel",
+  "entities": [
+    { "text": "Mumbai railway station", "label": "LOCATION" }
+  ]
+},
+{
+  "sentence": "Find luxury hotels in Chennai for tomorrow.",
+  "intent": "search_hotel",
+  "entities": [
+    { "text": "luxury", "label": "CLASS" },
+    { "text": "Chennai", "label": "LOCATION" },
+    { "text": "tomorrow", "label": "DATE" }
+  ]
+},
+{
+  "sentence": "I want a sea-facing room in Goa.",
+  "intent": "book_hotel",
+  "entities": [
+    { "text": "sea-facing room", "label": "ROOM_TYPE" },
+    { "text": "Goa", "label": "LOCATION" }
+  ]
+},
+{
+  "sentence": "Book a hotel for three adults in Delhi.",
+  "intent": "book_hotel",
+  "entities": [
+    { "text": "three adults", "label": "NUMBER" },
+    { "text": "Delhi", "label": "LOCATION" }
+  ]
+},
+{
+  "sentence": "Find me hotels under 2000 rupees in Pune.",
+  "intent": "search_hotel",
+  "entities": [
+    { "text": "2000 rupees", "label": "PRICE" },
+    { "text": "Pune", "label": "LOCATION" }
+  ]
+},
+{
+  "sentence": "Book a non-smoking room in Bangalore.",
+  "intent": "book_hotel",
+  "entities": [
+    { "text": "non-smoking room", "label": "ROOM_TYPE" },
+    { "text": "Bangalore", "label": "LOCATION" }
+  ]
+},
+{
+  "sentence": "I need a hotel with swimming pool in Jaipur.",
+  "intent": "search_hotel",
+  "entities": [
+    { "text": "swimming pool", "label": "FACILITY" },
+    { "text": "Jaipur", "label": "LOCATION" }
+  ]
+},
+{
+  "sentence": "Book a hotel in Hyderabad for next Friday.",
+  "intent": "book_hotel",
+  "entities": [
+    { "text": "Hyderabad", "label": "LOCATION" },
+    { "text": "next Friday", "label": "DATE" }
+  ]
+},
+{
+  "sentence": "Find me a hotel near Bangalore airport with free WiFi.",
+  "intent": "search_hotel",
+  "entities": [
+    { "text": "Bangalore airport", "label": "LOCATION" },
+    { "text": "free WiFi", "label": "FACILITY" }
+  ]
+},
+{
+  "sentence": "Book a premium suite in Mumbai for next weekend.",
+  "intent": "book_hotel",
+  "entities": [
+    { "text": "premium suite", "label": "ROOM_TYPE" },
+    { "text": "Mumbai", "label": "LOCATION" },
+    { "text": "next weekend", "label": "DATE" }
+  ]
+},
+{
+  "sentence": "Show me hotels near the beach in Goa.",
+  "intent": "search_hotel",
+  "entities": [
+    { "text": "the beach", "label": "LOCATION" },
+    { "text": "Goa", "label": "LOCATION" }
+  ]
+},
+{
+  "sentence": "I need a budget hotel in Jaipur for two days.",
+  "intent": "search_hotel",
+  "entities": [
+    { "text": "budget hotel", "label": "CLASS" },
+    { "text": "Jaipur", "label": "LOCATION" },
+    { "text": "two days", "label": "DATE" }
+  ]
+},
+{
+  "sentence": "Book a room in Hyderabad for a family of four.",
+  "intent": "book_hotel",
+  "entities": [
+    { "text": "Hyderabad", "label": "LOCATION" },
+    { "text": "family of four", "label": "NUMBER" }
+  ]
+},
+{
+  "sentence": "Find hotels in Chennai with parking facilities.",
+  "intent": "search_hotel",
+  "entities": [
+    { "text": "Chennai", "label": "LOCATION" },
+    { "text": "parking", "label": "FACILITY" }
+  ]
+},
+{
+  "sentence": "Book a hotel in Kochi for my business trip.",
+  "intent": "book_hotel",
+  "entities": [
+    { "text": "Kochi", "label": "LOCATION" },
+    { "text": "business trip", "label": "PURPOSE" }
+  ]
+},
+{
+  "sentence": "I want a hotel room in Delhi with an attached balcony.",
+  "intent": "search_hotel",
+  "entities": [
+    { "text": "Delhi", "label": "LOCATION" },
+    { "text": "attached balcony", "label": "FACILITY" }
+  ]
+},
+{
+  "sentence": "Book a hotel in Goa with a swimming pool for next Tuesday.",
+  "intent": "book_hotel",
+  "entities": [
+    { "text": "Goa", "label": "LOCATION" },
+    { "text": "swimming pool", "label": "FACILITY" },
+    { "text": "next Tuesday", "label": "DATE" }
+  ]
+}
+]

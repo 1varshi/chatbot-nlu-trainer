@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Logs</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+        }
+        th, td {
+            border: 1px solid #444;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Activity Logs</h2>
+
+<table>
+    <tr>
+        <th>Action</th>
+        <th>User</th>
+        <th>Time</th>
+    </tr>
+
+    {% for log in logs %}
+    <tr>
+        <td>{{ log.action }}</td>
+        <td>{{ log.user }}</td>
+        <td>{{ log.time }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+<a href="/admin_dashboard">⬅ Back to Admin Dashboard</a>
+
+</body>
+</html>

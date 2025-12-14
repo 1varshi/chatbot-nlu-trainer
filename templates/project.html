@@ -1,0 +1,32 @@
+<!doctype html> 
+<html> 
+<head><meta charset="utf-8"><title>Project</title><link rel="stylesheet" href="{{ url_for('static', 
+filename='styles.css') }}"></head> 
+<body> 
+<div class="container"> 
+  <h2>Project: {{ project.name }}</h2> 
+  <a href="{{ url_for('upload_dataset', project_id=project.id) }}">Upload Dataset</a> 
+  <h3>Datasets</h3> 
+  <ul> 
+    {% for d in datasets %} 
+        <li style="display: flex; align-items: center; gap: 6px;">
+    
+    <a href="{{ url_for('view_dataset', dataset_id=d.id) }}">{{ d.filename }}</a>
+
+    <form action="{{ url_for('delete_dataset', dataset_id=d.id) }}" method="POST">
+        <button type="submit" style="color:red; border:none; background:none; cursor:pointer;">
+            Delete
+        </button>
+    </form>
+
+</li>
+
+    {% else %} 
+        <li>No datasets uploaded</li> 
+    {% endfor %} 
+</ul> 
+ 
+  <p><a href="{{ url_for('dashboard') }}">Back to Dashboard</a></p> 
+</div> 
+</body> 
+</html>

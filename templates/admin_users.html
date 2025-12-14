@@ -1,0 +1,26 @@
+<h2>User Management</h2>
+
+<table border="1">
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Action</th>
+</tr>
+
+{% for u in users %}
+<tr>
+    <td>{{ u.id }}</td>
+    <td>{{ u.name }}</td>
+    <td>{{ u.email }}</td>
+    <td>
+        <a href="/admin/delete_user/{{ u.id }}">
+            <button>Delete</button>
+        </a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+
+<br>
+<a href="/admin_dashboard">Back</a>

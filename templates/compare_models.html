@@ -1,0 +1,58 @@
+<h2>Compare Two Models</h2>
+
+<form action="/run_comparison" method="post">
+
+    <label>Select Model A:</label>
+    <select name="model_a">
+        <option value="logreg">Logistic Regression</option>
+        <option value="svm">SVM</option>
+        <option value="nb">Naive Bayes</option>
+    </select>
+
+    <br><br>
+
+    <label>Select Model B:</label>
+    <select name="model_b">
+        <option value="logreg">Logistic Regression</option>
+        <option value="svm">SVM</option>
+        <option value="nb">Naive Bayes</option>
+    </select>
+
+    <br><br>
+
+    <button type="submit">Compare</button>
+</form>
+
+{% if comparison %}
+<hr>
+<h3>Comparison Results</h3>
+
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Metric</th>
+        <th>{{ comparison.model_a }}</th>
+        <th>{{ comparison.model_b }}</th>
+    </tr>
+    <tr>
+        <td>Accuracy</td>
+        <td>{{ comparison.acc_a }}</td>
+        <td>{{ comparison.acc_b }}</td>
+    </tr>
+    <tr>
+        <td>F1 Score</td>
+        <td>{{ comparison.f1_a }}</td>
+        <td>{{ comparison.f1_b }}</td>
+    </tr>
+</table>
+
+<h3>Visualization</h3>
+{% if graph %}
+<h3>Comparison Chart</h3>
+<img src="{{ graph }}" width="600">
+{% endif %}
+
+
+
+
+
+{% endif %}

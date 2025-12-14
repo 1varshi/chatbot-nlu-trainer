@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Upload Dataset</title><link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"></head>
+<body>
+<div class="container">
+  <h2>Upload dataset for project: {{ project.name }}</h2>
+  <form method="post" enctype="multipart/form-data">
+    <input type="file" name="dataset_file" accept=".csv,.json" required>
+    <button type="submit">Upload & Parse</button>
+  </form>
+  <p><a href="{{ url_for('project_view', project_id=project.id) }}">Back to Project</a></p>
+</div>
+</body>
+</html>

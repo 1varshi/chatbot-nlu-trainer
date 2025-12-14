@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Saved Annotations</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .item {
+            border: 1px solid #ccc;
+            padding: 4px;
+            margin-bottom: 1px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Saved Annotations</h1>
+{% if annotations %}
+    {% for a in annotations %}
+        <div class="item">
+            <p><strong>Sentence:</strong> {{ a.sentence }}</p>
+            <p><strong>Intent:</strong> {{ a.intent }}</p>
+
+            <strong>Entities:</strong>
+            <ul class="entities">
+                {% for e in a.entities %}
+                <li>{{ e.text }} → {{ e.label }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No annotations saved yet.</p>
+{% endif %}
+
+</body>
+</html>
